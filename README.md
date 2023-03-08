@@ -1,2 +1,3 @@
-# d3-maps
+# Some maps with D3.js 
+
 Exploring D3.js with some interactive maps
