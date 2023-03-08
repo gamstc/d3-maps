@@ -40,11 +40,11 @@
           .attr("height", height);
 
       var cities=[
-  		{"code":"BER", "city":"Berlin", "country":"Germany", "lat":52.52, "lon":13.405},
-  		{"code":"CGN", "city":"Köln", "country":"Germany", "lat":50.94, "lon":6.96},
-  		{"code":"MNC", "city":"München", "country":"Germany", "lat":48.135, "lon":11.58},
-  		{"code":"HHB", "city":"Hamburg", "country":"Germany", "lat":53.55, "lon":9.99}
-	  ];
+  		  {"code":"BER", "city":"Berlin", "country":"Germany", "lat":52.52, "lon":13.405},
+  		  {"code":"CGN", "city":"Köln", "country":"Germany", "lat":50.94, "lon":6.96},
+  		  {"code":"MNC", "city":"München", "country":"Germany", "lat":48.135, "lon":11.58},
+  		  {"code":"HHB", "city":"Hamburg", "country":"Germany", "lat":53.55, "lon":9.99}
+	    ];
 
       //changing the projection from mercator to albers
       var projection = d3.geo.albers()
@@ -90,7 +90,6 @@
             .attr("d", path.projection(projection)); 
   		});
 		svg.call(zoom);
-
 
 
     </script>
