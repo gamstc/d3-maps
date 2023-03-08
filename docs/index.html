@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    <meta name="description" content="Some interactive maps made with D3.js">
+    <meta name="author" content="Cornelia Gamst">
+
+    <meta property="og:title" content="Maps with D3.js">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamst.github.io/d3-maps">
+    <meta property="og:description" content="Some interactive maps made with D3.js">
+    <!-- <meta property="og:image" content="/warnstreik-gew/image.jpg">
+
+    <link rel="icon" type="image/png" href="/warnstreik-gew/strike.png"> -->
+
     <meta charset="utf-8">
-    <title>D3 Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>D3 Maps</title>
+
     <style>
       path {
         stroke: white;
@@ -10,11 +25,14 @@
         fill: #778899;
       }
     </style>
+
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/topojson.v0.min.js"></script>
   </head>
 
   <body>
+    <h1>Germany's biggest cities and counties</h1>
+    
     <script type="text/javascript">
       var width = 900;
       var height = 900;
