@@ -68,8 +68,8 @@
             .attr("d", path)
             .attr('fill','gray')
 
-               // add city location circles
-		  var locations = g.selectAll("circle")
+          // add city location circles
+		      var locations = g.selectAll("circle")
 			       .data(cities)
 			       .enter()
 			       .append("circle")
@@ -81,8 +81,10 @@
       });
     
 
-      //zoom and pan functionality
-		var zoom = d3.behavior.zoom().on("zoom",function() {
+    //zoom and pan functionality
+		var zoom = d3.behavior.zoom()
+      .scaleExtent([1,6])
+      .on("zoom",function() {
         	g.attr("transform","translate("+ d3.event.translate.join(",")+")scale("+d3.event.scale+")");
         	g.selectAll("path")  
             .attr("d", path.projection(projection)); 
