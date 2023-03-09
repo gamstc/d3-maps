@@ -55,9 +55,9 @@
 
       var cities=[
   		  {"code":"BER", "city":"Berlin", "country":"Germany", "lat":52.52, "lon":13.405},
-  		  {"code":"HGN", "city":"Hagen", "country":"Germany", "lat":50.94, "lon":6.96},
-  		  {"code":"SAA", "city":"Saarbrücken", "country":"Germany", "lat":48.135, "lon":11.58},
-  		  {"code":"HLB", "city":"Heilbronn", "country":"Germany", "lat":53.55, "lon":9.99}
+  		  {"code":"HGN", "city":"Hagen", "country":"Germany", "lat":51.367, "lon":7.463},
+  		  {"code":"SAA", "city":"Saarbrücken", "country":"Germany", "lat":49.238, "lon":6.997},
+  		  {"code":"HLB", "city":"Heilbronn", "country":"Germany", "lat":49.142, "lon":9.211}
 	    ];
 
       //changing the projection from mercator to albers
@@ -92,7 +92,10 @@
 			       .attr("r", 5)
 			       .style("fill", "#17a468")
 			       .style("opacity", 0.6)
-             .on('mouseover', function(){d3.select(this).style('fill', 'red'); return tooltip.style("visibility", "visible");})
+             .on('mouseover', function(d){
+               d3.select(this).style('fill', '#EAF4F8');
+               tooltip.text(d.city);
+               return tooltip.style("visibility", "visible");})
              .on('mouseout', function(){d3.select(this).style('fill', '#17a468');return tooltip.style("visibility", "hidden");})
              .on("mousemove", function(){return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
       });
