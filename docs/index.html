@@ -46,6 +46,13 @@
           .attr("width", width)
           .attr("height", height);
 
+      var tooltip = d3.select("body").append("div")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("visibility", "hidden")
+        .style("background", "#EAF4F8")
+        .text("a simple tooltip");
+
       var cities=[
   		  {"code":"BER", "city":"Berlin", "country":"Germany", "lat":52.52, "lon":13.405},
   		  {"code":"HGN", "city":"Hagen", "country":"Germany", "lat":50.94, "lon":6.96},
@@ -85,20 +92,20 @@
 			       .attr("r", 5)
 			       .style("fill", "#17a468")
 			       .style("opacity", 0.6)
-             .on('mouseover', function(){d3.select(this).style('fill', 'red');})
-             .on('mouseout', function(){d3.select(this).style('fill', '#17a468');})
+             .on('mouseover', function(){d3.select(this).style('fill', 'red'); return tooltip.style("visibility", "visible");})
+             .on('mouseout', function(){d3.select(this).style('fill', '#17a468');return tooltip.style("visibility", "hidden");})
+             .on("mousemove", function(){return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
       });
     
-
-    //zoom and pan functionality
-		var zoom = d3.behavior.zoom()
-      .scaleExtent([1,6])
-      .on("zoom",function() {
+      //zoom and pan functionality
+		  var zoom = d3.behavior.zoom()
+        .scaleExtent([1,6])
+        .on("zoom",function() {
         	g.attr("transform","translate("+ d3.event.translate.join(",")+")scale("+d3.event.scale+")");
         	g.selectAll("path")  
             .attr("d", path.projection(projection)); 
-  		});
-		svg.call(zoom);
+  		  });
+		  svg.call(zoom);
 
 
     </script>
