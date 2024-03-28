@@ -1,6 +1,11 @@
 //import "./styles.css";
 //import * as L from "leaftlet";
 
+var config = {
+    headers: {'Access-Control-Allow-Origin': '*'}
+};
+
+
 // initialize the map
 const map = leaflet.map("map").setView([51.505,-0.09],13);
 
