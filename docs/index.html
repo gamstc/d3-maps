@@ -78,7 +78,7 @@
 
       var g = svg.append("g");
       
-      d3.json("https://raw.githubusercontent.com/deldersveld/topojson/master/countries/germany/germany-regions.json", function(error, topology) {
+      d3.json("https://raw.githubusercontent.com/AliceWi/TopoJSON-Germany/master/germany.json", function(error, topology) {
           g.selectAll("path")
             .data(topojson.object(topology, topology.objects.DEU_adm2)
                 .geometries)
